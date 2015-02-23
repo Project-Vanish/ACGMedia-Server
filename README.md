@@ -1,7 +1,7 @@
 # ACGMedia-Server
 *「ACG Media」服务端*
 
-该程序基于 Node.JS / MariaDB，用于「ACG Media」的数据储存、ACGMedia-Cache 的缓存数据源，以及提供直接的语录获取功能。
+该程序基于 Node.JS / Redis，用于「ACG Media」的数据储存、ACGMedia-Cache 的缓存数据源，以及提供直接的语录获取功能。
 
 
 ----------
@@ -93,3 +93,15 @@
   from_id: 13
 }]
 ```
+
+
+##贡献者
+
+Project-Vanish
+
+|-Plutonist (wspl/Plutonium/plqws)
+
+
+##License
+
+MIT
