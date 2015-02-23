@@ -1,0 +1,25 @@
+{
+  "name": "ACGMedia-Server",
+  "version": "0.0.1",
+  "description": "ACGMedia Backend Server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wspl/ACGMedia-Server.git"
+  },
+  "keywords": [
+    "acg"
+  ],
+  "author": "Project Vanish",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wspl/ACGMedia-Server/issues"
+  },
+  "homepage": "https://github.com/wspl/ACGMedia-Server",
+  "dependencies": {
+    "express": "^4.12.0"
+  }
+}
