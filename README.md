@@ -79,7 +79,7 @@
   qid: 132,
   type: 'Quotation',
   category: '醍醐灌顶'
-  category_id: 3,
+  category_id: [2,3],
   from: '《四月是你的谎言》',
   from_id: 13
 },{
@@ -88,18 +88,37 @@
   qid: 133,
   type: 'Quotation',
   category: '醍醐灌顶'
-  category_id: 3,
+  category_id: [2,3],
   from: '《四月是你的谎言》',
   from_id: 13
 }]
 ```
 
+##Redis数据库的设计
+
+#单条语录 - 正文#
+
+    get quotation:`[id]` // 返回：或许前路永夜，即便如此我也要前进，因为星光即使微弱也会为我照亮前途。
+
+
+#单条语录 - 分类#
+
+    get quotation:`[id]`:category // 返回：2,3
+
+
+#单条语录 - 出处#
+
+    get quotation:`[id]`:from // 返回：13
+
+
+#语录分类#
+
+    smembers quotation:category:2 // 返回：1,7,...,133
+
 
 ##贡献者
 
-Project-Vanish
-
-|-Plutonist (wspl/Plutonium/plqws)
+Project-Vanish / Plutonist (wspl/Plutonium/plqws)
 
 
 ##License
