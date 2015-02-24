@@ -30,7 +30,7 @@
 **JSON返回结果示例**
 ```
 {
-  ok: 1,
+  isok: 1,
   text: '或许前路永夜，即便如此我也要前进，因为星光即使微弱也会为我照亮前途。',
   qid: 132,
   type: 'Quotation',
@@ -39,13 +39,11 @@
   from: '《四月是你的谎言》',
   from_id: 13
 }
-//结果为空示例
+//错误示例
 {
-  err: 'No Results!'
-}
-//其他错误示例
-{
-  err: 'Invalid dataType!'
+  err: 101,
+  text: 'Invalid QID!',
+  isok: 0
 }
 ```
 
@@ -94,7 +92,8 @@
 []
 //其他错误示例
 {
-  err: 'Invalid dataType!'
+  err: 102,
+  text: 'Invalid Request!'
 }
 ```
 
@@ -107,7 +106,8 @@
 []
 //其他错误示例
 {
-  err: 'Invalid dataType!'
+  err: 102,
+  text: 'Invalid Request!'
 }
 ```
 
