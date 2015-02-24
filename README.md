@@ -114,25 +114,45 @@
 ##Redis 数据库的设计
 
 
-**单条语录 - JSON**
+**QID->单条语录**
 
     get quotation:`[id]`
-    Result: 2,3;13 //第一个分类ID,第二个分类ID;出处ID
+    Result: 2,3;13;5oiW6K645YmN6Lev5rC45aSc77yM5Y2z5L6/5aaC5q2k5oiR5Lmf6KaB5YmN6L+b77yM5Zug5Li65pif5YWJ5Y2z5L2/5b6u5byx5Lmf5Lya5Li65oiR54Wn5Lqu5YmN6YCU44CC //第一个分类ID,第二个分类ID;出处ID;语录正文Base64
 
-**语录分类**
+**语录分类ID->QID**
 
     smembers quotation:category:2
     Result: 1,7,...,133,...
 
-**语录出处**
+**语录出处ID->QID**
 
     smembers quotation:from:13
     Result: 64,...,133,...
 
-**语录->QID**
+**语录正文MD5->QID**
 
-    hget quotation:text f72b00a56a403e0f152e67818be96826 // 查询语录字符串MD5
+    hget quotation:text f72b00a56a403e0f152e67818be96826
     Result: 133
+
+**语录分类ID->语录分类中文名**
+
+    get quotation:category:2:name
+    Result：醍醐灌顶
+
+**语录出处ID->语录出处中文名**
+
+    get quotation:from:2:name
+    Result: 《四月是你的谎言》
+
+**语录分类中文名MD5->语录分类ID**
+
+    hget quotation:category 2ab2d2105778f0a57d7e1bfd8f3724cb
+    Result: 3
+
+**语录出处中文名MD5->语录出处ID**
+
+    hget quotation:from 916a65ea2ebf41f2ba916b820bc1315e
+    Result: 13
 
 
 ##贡献者
