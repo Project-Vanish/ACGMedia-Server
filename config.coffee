@@ -7,7 +7,7 @@ module.exports = {
     user: 'acgmedia',
     pass: 'acgmedia_rAg4!a',
     name: 'acgmedia',
-    details: { //sequelize options
+    details: { #sequelize options
       host: 'localhost',
       dialect: 'mariadb'
     }

@@ -1,9 +1,6 @@
 Express = require 'express'
 app = Express()
 
-Redis = require 'redis'
-redis = redis.createClient()
-
 config = require './config'
 
 quotation = require './quotation'

@@ -1,33 +1,30 @@
-var qid2sq = function(){
+Redis = require 'redis'
+redis = Redis.createClient()
 
-}
-var cid2qid = function(){
+qid2sq = (qid, callback) ->
+  redis.get 'quotation:' + qid , (err, reply) ->
+    if !err
+      callback null, reply
+    else
+      callback err
 
-}
-var fid2qid = function(){
 
-}
-var qt2qid = function(){
+cid2qid = (cid) ->
 
-}
-var cid2ct = function(){
+fid2qid = (fid) ->
 
-}
-var fid2ft = function(){
+qt2qid = (qid) ->
 
-}
-var ct2cid = function(){
+cid2ct = (cid) ->
 
-}
-var ft2fid = function(){
+fid2ft = (fid) ->
 
-}
-var getSingleQuotation = function(dataType, qid, category_id, from_id){
+ct2cid = (categoryText) ->
 
-}
-var getQuotations = function(dataType, category_id, from_id){
+ft2fid = (fromText) ->
 
-}
-module.exports = function(req, res){
-  
-}
+getSingleQuotation = (dataType, qid, categoryID, fromID) ->
+
+getQuotations = (dataType, categoryID, fromID) ->
+
+module.exports = (req, res) ->
