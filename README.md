@@ -111,25 +111,28 @@
 }
 ```
 
-##Redis数据库的设计
+##Redis 数据库的设计
 
 
 **单条语录 - JSON**
 
     get quotation:`[id]`
-    2,3;13 //第一个分类ID,第二个分类ID;出处ID
+    Result: 2,3;13 //第一个分类ID,第二个分类ID;出处ID
 
 **语录分类**
 
-    smembers quotation:category:2 // 返回：1,7,...,133,...
+    smembers quotation:category:2
+    Result: 1,7,...,133,...
 
 **语录出处**
 
-    smembers quotation:from:13 // 返回 64,...,133,...
+    smembers quotation:from:13
+    Result: 64,...,133,...
 
 **语录->QID**
 
-    hget quotation:text f72b00a56a403e0f152e67818be96826 // 查询语录字符串MD5，返回QID：133
+    hget quotation:text f72b00a56a403e0f152e67818be96826 // 查询语录字符串MD5
+    Result: 133
 
 
 ##贡献者
